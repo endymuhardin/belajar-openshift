@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import com.muhardin.endy.belajar.Todo;
 
 public class TodoDao {
-    private static final String OPENSHIFT_DB_HOST = "OPENSHIFT_MYSQL_HOST";
+    private static final String OPENSHIFT_DB_HOST = "OPENSHIFT_MYSQL_DB_HOST";
     private static final String OPENSHIFT_DB_NAME = "aplikasitodo";
     private static final String OPENSHIFT_DB_USERNAME = "admin3KBMI8e";
     private static final String OPENSHIFT_DB_PASSWORD = "gA_kt6b2LRVM";
