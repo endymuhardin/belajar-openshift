@@ -20,26 +20,11 @@ public class TodoListServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) 
                                         throws IOException, ServletException {
                                         
-        // Data yang akan ditampilkan, nantinya ambil dari database
-        List<Todo> daftarTodo = new ArrayList<Todo>();
-        
-        Todo t1 = new Todo();
-        t1.setId(1);
-        t1.setKeterangan("Registrasi Openshift");
-        t1.setSelesai(true);
-        daftarTodo.add(t1);
-        
-        Todo t2 = new Todo();
-        t2.setId(2);
-        t2.setKeterangan("Buat app baru");
-        t2.setSelesai(false);
-        daftarTodo.add(t2);
-        
-        Todo t3 = new Todo();
-        t3.setId(3);
-        t3.setKeterangan("Deploy Aplikasi");
-        t3.setSelesai(false);
-        daftarTodo.add(t3);
+        // Koneksi database
+        TodoDao td = new TodoDao();
+                                        
+        // Data yang akan ditampilkan
+        List<Todo> daftarTodo = td.semuaTodo();
         
         // masukkan data ke request attribute
         req.setAttribute("todo", daftarTodo);
