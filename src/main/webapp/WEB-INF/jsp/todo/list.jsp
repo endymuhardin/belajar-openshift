@@ -32,8 +32,10 @@
 
       <div class="jumbotron">
         <h1>Daftar Todo</h1>
-        
-        <table>
+      </div>
+    
+    
+      <table class="table table-striped table-hover table-condensed table-bordered">
             <thead>
                 <tr>
                     <th>&nbsp;</th>
@@ -49,9 +51,6 @@
                 </c:forEach>
             </tbody>
         </table>
-        
-      </div>
-    
       
       <footer class="footer">
         <p>&copy; <a href="http://software.endy.muhardin.com">Endy Muhardin</a> 2015</p>
