@@ -9,6 +9,7 @@ import com.muhardin.endy.belajar.Todo;
 
 public class TodoDao {
     private static final String OPENSHIFT_DB_HOST = "OPENSHIFT_MYSQL_DB_HOST";
+    private static final String OPENSHIFT_DB_PORT = "OPENSHIFT_MYSQL_DB_PORT";
     private static final String OPENSHIFT_DB_NAME = "aplikasitodo";
     private static final String OPENSHIFT_DB_USERNAME = "admin3KBMI8e";
     private static final String OPENSHIFT_DB_PASSWORD = "gA_kt6b2LRVM";
@@ -17,7 +18,8 @@ public class TodoDao {
 
     private void connect() throws Exception {
         String host = System.getenv(OPENSHIFT_DB_HOST);
-        String url = "jdbc:mysql://"+host+"/"+OPENSHIFT_DB_NAME;
+        String port = System.getenv(OPENSHIFT_DB_PORT);
+        String url = "jdbc:mysql://"+host+":"+port+"/"+OPENSHIFT_DB_NAME;
         
         koneksiDatabase = DriverManager.getConnection(url, OPENSHIFT_DB_USERNAME, OPENSHIFT_DB_PASSWORD);
     }
