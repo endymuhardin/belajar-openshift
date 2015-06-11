@@ -21,6 +21,7 @@ public class TodoDao {
         String port = System.getenv(OPENSHIFT_DB_PORT);
         String url = "jdbc:mysql://"+host+":"+port+"/"+OPENSHIFT_DB_NAME;
         
+        Class.forName("com.mysql.jdbc.Driver");
         koneksiDatabase = DriverManager.getConnection(url, OPENSHIFT_DB_USERNAME, OPENSHIFT_DB_PASSWORD);
     }
     
